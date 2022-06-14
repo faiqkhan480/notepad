@@ -12,8 +12,7 @@ class CreateNoteActivity extends StatefulWidget {
   _CreateNoteActivityState createState() => _CreateNoteActivityState();
 }
 
-class _CreateNoteActivityState extends State<CreateNoteActivity>
-    with CreateNoteComponents {
+class _CreateNoteActivityState extends State<CreateNoteActivity> with CreateNoteComponents {
   late CreateNoteController _controller;
 
   @override

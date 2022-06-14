@@ -1,5 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
+import 'package:libv_markdown/libv_markdown.dart';
 
 import 'package:rx_notifier/rx_notifier.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -38,9 +39,11 @@ class _ShowNoteActivityState extends State<ShowNoteActivity> {
         height: MediaQuery.of(context).size.height,
         child: Scrollbar(
           child: RxBuilder(
-            builder: (context) => Markdown(
-              data: _controller.note.value.description,
-            ),
+            builder: (context) =>
+                MarkdownView(
+                  markdownViewHTML: _controller.note.value.description,
+                ),
+            // Markdown(data: _controller.note.value.description,),
           ),
         ),
       ),
